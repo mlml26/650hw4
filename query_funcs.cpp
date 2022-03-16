@@ -1,5 +1,5 @@
 #include "query_funcs.h"
-
+#include <iomanip>
 
 void add_player(connection *C, int team_id, int jersey_num, string first_name, string last_name,
                 int mpg, int ppg, int rpg, int apg, double spg, double bpg){
@@ -105,7 +105,7 @@ void query1(connection *C,
     if(it == R.begin()) {
       cout << "PLAYER_ID TEAM_ID UNIFORM_NUM FIRST_NAME LAST_NAME MPG PPG RPG APG SPG BPG"<<endl;
     }
-    cout << it[0].as<int>() << " " << it[1].as<int>() << " " << it[2].as<int>() << " "  << it[3].as<string>() << " "  << it[4].as<string>() << " " << it[5].as<int>() << " " << it[6].as<int>() << " " << it[7].as<int>() << " " << it[8].as<int>() << " " << it[9].as<double>() << " " << it[10].as<double>()<< endl;
+    cout << it[0].as<int>() << " " << it[1].as<int>() << " " << it[2].as<int>() << " "  << it[3].as<string>() << " "  << it[4].as<string>() << " " << it[5].as<int>() << " " << it[6].as<int>() << " " << it[7].as<int>() << " " << it[8].as<int>() << " " << fixed << setprecision(1) << it[9].as<double>() << " " << it[10].as<double>()<< endl;
   }
 }
 
